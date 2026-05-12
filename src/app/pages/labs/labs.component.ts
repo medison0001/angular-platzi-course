@@ -17,4 +17,6 @@ export class LabsComponent {
     'Probar la aplicación',
     'Desplegar la aplicación'
   ];
+  name = 'Edison Monsalve';
+  age = 30;
 }
