@@ -28,4 +28,17 @@ export class LabsComponent {
     city: 'Medellín',
     avatar : 'https://w3schools.com/howto/img_avatar.png'
   }
+
+  clickHander(){
+    alert('Hola Mundo');
+  }
+
+  changeHandler(event: Event){
+    console.log(event)
+  }
+
+  keydownHandler(event: KeyboardEvent){
+    const input = event.target as HTMLInputElement;
+    console.log(input.value);
+  }
 }
