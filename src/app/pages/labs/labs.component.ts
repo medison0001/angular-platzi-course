@@ -19,4 +19,13 @@ export class LabsComponent {
   ];
   name = 'Edison Monsalve';
   age = 30;
+  disabled = true;
+  img = 'https://angular.io/assets/images/logos/angular/angular.svg';
+
+  person = {
+    name: 'Edison Monsalve',
+    age: 30,
+    city: 'Medellín',
+    avatar : 'https://w3schools.com/howto/img_avatar.png'
+  }
 }

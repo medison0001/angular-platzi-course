@@ -7,3 +7,9 @@
 <h2>{{ 'Hola'.repeat(3) }}</h2>
 <p>La suma de 2 + 2 es {{ 2 + 2 }}</p>
 <p>Mi nombre es {{ name }} y tengo {{ age }} años.</p>
+<hr />
+<img [src]="img" alt="Angular Logo">
+<input type="text" [value]="name">
+<button [disabled]="disabled">Click me</button>
+<p>person: {{ person.name }}, {{ person.age }} años, {{ person.city }}</p>
+<img [src]="person.avatar" alt="Avatar">
