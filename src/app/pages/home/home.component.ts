@@ -16,4 +16,14 @@ export class HomeComponent {
     'Probar la aplicación',
     'Desplegar la aplicación'
   ]);
+
+  changeHandler(event: Event){
+    const input = event.target as HTMLInputElement;
+    const newTask = input.value;
+    this.tasks.update(tasks => [...tasks, newTask]);
+  }
+
+  deleteTask(index: number){
+    this.tasks.update(tasks => tasks.filter((_, i) => i !== index));
+  }
 }
