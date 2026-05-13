@@ -12,19 +12,19 @@
   <img [src]="img" alt="Angular Logo" width="200">
   <input type="text" [value]="name()">
   <button [disabled]="disabled">Click me</button>
-  <p>person: {{ person.name }}, {{ person.age }} años, {{ person.city }}</p>
-  <img [src]="person.avatar" alt="Avatar" width="200">
+  <p>person: {{ person().name }}, {{ person().age }} años, {{ person().city }}</p>
+  <img [src]="person().avatar" alt="Avatar" width="200">
   <hr />
   <button (click)="clickHander()">Click me</button>
   <button (dblclick)="clickHander()">Double me</button>
   <p>(change) - Con numero</p>
-  <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  <input type="number" [value]="person().age" (change)="changeHandler($event)">
   <p>(change) - Con texto la diferencia es que se dispara cuando se pierde el foco</p>
-  <input type="text" [value]="person.name" (change)="changeHandler($event)">
+  <input type="text" [value]="person().name" (change)="changeHandler($event)">
   <p>(keydown)</p>
-  <input type="text" [value]="person.name" (keydown)="keydownHandler($event)">
+  <input type="text" [value]="person().name" (keydown)="keydownHandler($event)">
   <p>(keydown shift+t)</p>
-  <input type="text" [value]="person.name" (keydown.shift.t)="clickHander()">
+  <input type="text" [value]="person().name" (keydown.shift.t)="clickHander()">
   <hr />
   <p>total: {{ tasks().length }}</p>
   <ul>
@@ -35,4 +35,15 @@
   <h1>Signals</h1>
   <input type="text" [value]="name()" (change)="changeHandler($event)">
   <p>name: {{ name() }}</p>
+  <hr />
+  <div *ngIf="1 !== 1">
+    My contend
+  </div>
+  <input type="number" [value]="person().age" (change)="changeAge($event)">
+  <div *ngIf="person().name === 'Edison Monsalve' && person().age > 18; else elseBlock">
+    Soy Edison Monsalve y soy mayor de edad
+  </div>
+  <ng-template #elseBlock>
+    <p>No soy Edison Monsalve o no soy mayor de edad</p>
+  </ng-template>
 </div>
