@@ -37,7 +37,7 @@ export class HomeComponent {
     {
       id: Date.now() + 4,
       title: 'Desplegar la aplicación',
-      completed: false
+      completed: true
     }
   ]);
 
@@ -78,4 +78,31 @@ export class HomeComponent {
       });
     });
   }
+
+  updateTaskEditingMode(index: number){
+        this.tasks.update(tasks => {
+      return tasks.map(task => {
+        if (tasks.indexOf(task) === index) {
+          return { ...task, editing: !task.editing };
+        }
+        return {...task, editing: false };
+      });
+    });
+  }
+
+    updateTaskText(index: number, event: Event){
+        const input = event.target as HTMLInputElement;
+        const newText = input.value.trim();
+        if (newText) {
+            this.tasks.update(tasks => {
+                return tasks.map(task => {
+                    if (tasks.indexOf(task) === index) {
+                        return { ...task, title: newText, editing: false };
+                    }
+                    return task;
+                });
+            });
+        }
+  }
+
 }
