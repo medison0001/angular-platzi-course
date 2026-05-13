@@ -22,7 +22,7 @@ export class HomeComponent {
     {
       id: Date.now() + 1,
       title: 'Crear un nuevo proyecto',
-      completed: false
+      completed: true
     },
     {
       id: Date.now() + 2,
