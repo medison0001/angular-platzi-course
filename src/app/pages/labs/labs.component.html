@@ -40,10 +40,18 @@
     My contend
   </div>
   <input type="number" [value]="person().age" (change)="changeAge($event)">
-  <div *ngIf="person().name === 'Edison Monsalve' && person().age > 18; else elseBlock">
-    Soy Edison Monsalve y soy mayor de edad
+  <div *ngIf="person().name === 'edison' && person().age > 18; else elseBlock">
+    Soy Edison y soy mayor de edad
   </div>
   <ng-template #elseBlock>
-    <p>No soy Edison Monsalve o no soy mayor de edad</p>
+    <p>No soy Edison o no soy mayor de edad</p>
   </ng-template>
+  <hr />
+  <input type="text" [value]="person().name" (change)="changeName($event)">
+  <div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'edison'">Soy Edison</p>
+    <p *ngSwitchCase="'julian'">Soy Julian</p>
+    <p *ngSwitchCase="'ana'">Soy Ana</p>
+    <p *ngSwitchDefault>No soy Edison, Julian ni Ana</p>
+  </div>
 </div>

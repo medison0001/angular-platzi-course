@@ -23,7 +23,7 @@ export class LabsComponent {
   img = 'https://angular.io/assets/images/logos/angular/angular.svg';
 
   person = signal({
-    name: 'Edison Monsalve',
+    name: 'edison',
     age: 30,
     city: 'Medellín',
     avatar : 'https://w3schools.com/howto/img_avatar.png'
@@ -49,6 +49,13 @@ export class LabsComponent {
     const input = event.target as HTMLInputElement;
     const newValue = Number(input.value);
     this.person.update(person => ({ ...person, age: newValue }));
+    console.log(newValue);
+  }
+
+    changeName(event: Event){
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update(person => ({ ...person, name: newValue }));
     console.log(newValue);
   }
 }
